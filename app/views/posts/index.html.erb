@@ -1,0 +1,17 @@
+<div class="row mt pt">
+  <div class="col-md-5">
+  	<div class="top-pad glassy-bg">
+    	<%= render 'new' %>
+    </div>
+    <div class="tags-cloud glassy-bg">
+      <h4>Tags Cloud</h4>
+      <% tag_cloud Tag.counts, %w{css1 css2 css3 css4} do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+      <% end %>
+    </div>
+  </div>
+  <div class= "col-md-7" id="posts">
+    <%= render @posts.reverse %>
+  </div>
+</div>
+

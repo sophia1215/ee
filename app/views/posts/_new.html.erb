@@ -1,0 +1,17 @@
+<div class="row text-center">
+  <%= form_for(Post.new, remote: true) do |f| %>
+    <div>
+      <%= f.text_field :author, required: true, placeholder: "Author name", class: "form-control col-md-4" %><br><br>
+    </div>
+    <div>
+      <%= f.text_area :content, required: true, placeholder: "Your post", rows: 5, class: "form-control col-md-4" %>
+      <br><br>
+    </div>
+    <div> <br><br><br><br>
+      <%= f.text_field :all_tags, required: true, placeholder: "Tags separated with comma", class: "form-control col-md-4" %>
+    </div>
+    <div> <br><br>
+      <%= f.submit "Post", class: "form-control btn btn-primary"%>
+    </div>
+  <% end %>
+</div>
