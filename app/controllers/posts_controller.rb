@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    # byebug
     respond_to do |format|
       if @post.save
         format.js # Will search for create.js.erb
